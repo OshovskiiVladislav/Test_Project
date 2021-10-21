@@ -1,6 +1,5 @@
 package com.test.spring.boot.services;
 
-import com.test.spring.boot.model.FileDescriptor;
 import com.test.spring.boot.model.Lesson;
 import com.test.spring.boot.repositories.LessonRepository;
 import lombok.RequiredArgsConstructor;
@@ -25,5 +24,4 @@ public class LessonService {
     public Lesson save(Lesson lesson) {
         return lessonRepository.save(lesson);
     }
-
 }

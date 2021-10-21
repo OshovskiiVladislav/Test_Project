@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 
+// todo api/v1 !!!!
+// todo файлы во время тестов сохраняются
+
+
 @Controller
 @RequestMapping("/files")
 @RequiredArgsConstructor
@@ -38,7 +42,7 @@ public class FileController {
     @PostMapping("/uploadFileWithAddtionalData")
     public String submit(@RequestParam MultipartFile file, @RequestParam Long lessonId, ModelMap modelMap) {
         modelMap.addAttribute("id", lessonId);
-        fileService.save(lessonId, file);
+        fileService.uploadFile(lessonId, file);
         return "redirect:/lessons/edit/" + lessonId;
     }
 }

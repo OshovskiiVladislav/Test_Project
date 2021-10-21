@@ -35,7 +35,7 @@ public class FileService {
         return fileRepository.save(fileDescriptor);
     }
 
-    public FileDescriptor save(Long lessonId, MultipartFile file) {
+    public FileDescriptor uploadFile(Long lessonId, MultipartFile file) {
         FileDescriptor fileDescriptor = new FileDescriptor();
         Lesson lesson = lessonService.findById(lessonId).orElseThrow();
         try {
@@ -51,5 +51,4 @@ public class FileService {
 
         return fileDescriptor;
     }
-
 }
